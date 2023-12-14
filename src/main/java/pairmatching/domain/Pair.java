@@ -7,6 +7,10 @@ public class Pair {
 
     private List<Crew> crews;
 
+    public Pair(List<Crew> crews) {
+        this.crews = crews;
+    }
+
     public List<String> getNames() {
         List<String> names = new ArrayList<>();
         for (Crew crew : crews) {
