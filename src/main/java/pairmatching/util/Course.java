@@ -1,12 +1,17 @@
 package pairmatching.util;
 
-import java.util.List;
-
 public enum Course {
 
-    ;
+    BACKEND("백엔드"),
+    FRONTEND("프론트엔드");
 
     private String viewName;
-    private List<String> features;
 
+    Course(String viewName) {
+        this.viewName = viewName;
+    }
+
+    public String getViewName() {
+        return viewName;
+    }
 }

@@ -1,7 +1,7 @@
 # 🚀기능 명세서
 
 - [x] 레벨 : 5단계 - LevelEnum
-- [ ] 과정 : 백엔드, 프론트엔드 - CourseEnum
+- [x] 과정 : 백엔드, 프론트엔드 - CourseEnum
 - [ ] 페어 매칭 
   - [ ] 조건
     - [ ] 함께 미션 수행할 페어 두명씩 매칭 - Pair#List<Crew>
