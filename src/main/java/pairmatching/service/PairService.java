@@ -9,16 +9,30 @@ public class PairService {
 
     private final PairRepository pairRepository = new PairRepository();
 
-    public boolean isDuplicatedPairExists(Level level,List<Pair> pairs){
+    public boolean isDuplicatedPairExists(Level level, List<Pair> pairs) {
+        if (!pairRepository.isPairExistByLevel(level)) {
+            return false;
+        }
+        List<Pair> storedPairs = pairRepository.getPairsByLevel(level);
         for (Pair pair : pairs) {
-            if(pairRepository.isExistPair(level,pair)){
+            if (isExistPair(storedPairs, pair)) {
                 return true;
             }
         }
         return false;
     }
 
-    public List<Pair> matchPair(){
+    private boolean isExistPair(List<Pair> storedPairs, Pair pair) {
+        for (Pair storedPair : storedPairs) {
+            if (storedPair.getNames().stream().filter(name -> pair.getNames().contains(name))
+                    .count() >= 2) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public List<Pair> matchPair() {
         return null;
     }
 

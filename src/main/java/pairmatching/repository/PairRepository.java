@@ -33,15 +33,12 @@ public class PairRepository {
         System.out.println("###"+pairStorage.get(level).size());
     }
 
-    public boolean isExistPair(Level level, Pair pair) {
-        System.out.println("###"+pairStorage.get(level).size());
-        for (Pair storedPair : pairStorage.get(level)) {
-            if (storedPair.getNames().stream().filter(name -> pair.getNames().contains(name))
-                    .count() >= 2) {
-                return true;
-            }
-        }
-        return false;
+    public List<Pair> getPairsByLevel(Level level){
+        return pairStorage.get(level);
+    }
+
+    public boolean isPairExistByLevel(Level level){
+        return pairStorage.get(level).size()!=0;
     }
 
     public List<Pair> findAllByCourse(Course course) {
