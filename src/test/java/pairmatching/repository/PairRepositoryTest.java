@@ -29,4 +29,14 @@ class PairRepositoryTest {
                         new Crew(Course.BACKEND, "마바"))))).isTrue();
     }
 
+    @Test
+    void 존재하지_않는_페어() {
+        pairRepository.save(LEVEL1, List.of(new Pair(
+                        List.of(new Crew(Course.BACKEND, "가자"), new Crew(Course.BACKEND, "다라"))),
+                new Pair(List.of(new Crew(Course.BACKEND, "사아"), new Crew(Course.BACKEND, "다라")))));
+        assertThat(pairRepository.isExistPair(LEVEL1, new Pair(
+                List.of(new Crew(Course.BACKEND, "가나"), new Crew(Course.BACKEND, "다라"),
+                        new Crew(Course.BACKEND, "마바"))))).isFalse();
+    }
+
 }

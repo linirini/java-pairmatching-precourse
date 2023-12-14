@@ -8,7 +8,7 @@
     - [ ] 대상이 홀수인 경우 : 한 페어는 3인
     - [ ] 같은 레벨에서 이미 페어를 맺은 크루와는 다시 페어로 매칭 X - PairRepository#List<Pair>,level
       - [ ] 페어 매칭 결과들을 레벨 별로 저장해놓는다 - PairRepository#save
-      - [ ] 페어 매칭 기록이 있는지 확인한다 - PairMatchingService#isPairAlreadyExists
+      - [x] 페어 매칭 기록이 있는지 확인한다 - PairService#isDuplicatedPairExists
   - [ ] 구현 방법 - PairMatchingService
     - [ ] List<String> 크루이름목록
     - [ ] 크루 목록의 순서를 랜덤으로 섞는다. - ShuffleMachine#shuffle
@@ -85,7 +85,7 @@
 - [ ] 페어 초기화 - PairRepository#deleteAll
   - [x] "초기화 되었습니다." 출력
 - [ ] 입출력 - InputView
-  - [ ] 파일 입출력으로 크루 정보 불러옴
+  - [x] 파일 입출력으로 크루 정보 불러옴
   - 크루 이름 중복 불가
 
 - 예시
