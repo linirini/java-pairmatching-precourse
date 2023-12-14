@@ -8,20 +8,20 @@
     - [ ] 대상이 홀수인 경우 : 한 페어는 3인
     - [ ] 같은 레벨에서 이미 페어를 맺은 크루와는 다시 페어로 매칭 X - PairRepository#List<Pair>,level
       - [ ] 페어 매칭 결과들을 레벨 별로 저장해놓는다 - PairRepository#save
-      - [ ] 페어 매칭 기록이 있는지 확인한다 - PairRepository#findPairContaining
+      - [ ] 페어 매칭 기록이 있는지 확인한다 - PairMatchingService#isPairAlreadyExists
   - [ ] 구현 방법 - PairMatchingService
     - [ ] List<String> 크루이름목록
-    - [ ] 크루 목록의 순서를 랜덤으로 섞는다. - PairMatchingService#shuffleCrews
+    - [ ] 크루 목록의 순서를 랜덤으로 섞는다. - ShuffleMachine#shuffle
       - [ ] `camp.nextstep.edu.missionutils.Randoms`의 shuffle 메서드 사용
     - [ ] 섞은 순서에서 두 명씩 잘라서 페어로 묶는다 - PairMatchingService#matchPair
     - [ ] 홀수인 경우 마지막 남은 크루는 마지막 페어에 포함
     - [ ] 재매칭 시도
-      - [ ] 중복 매칭 페어 존재 시 크루 목록의 순서를 다시 랜덤으로 섞어서 매칭 시도 - PairsRepository#isExist
+      - [ ] 중복 매칭 페어 존재 시 크루 목록의 순서를 다시 랜덤으로 섞어서 매칭 시도 - PairRepository#isExist
       - [ ] 3회 시도까지 매칭 안되거나 매칭 가능한 경우의 수가 없으면 예외 처리 - PairMatchingService#
         - [ ] 페어 매칭 실패 횟수를 저장한다.
         - [ ] 매칭 가능한 경우의 수가 없는 경우?
       - [ ] 안내 문구를 출력 후 매칭을 진행하는데, 아니오 선택 시 코스, 레벨, 미션 다시 선택
-  - [ ] 페어 조회  - PairRepository#findAll
+  - [ ] 페어 조회  - PairRepository#findAllByCourse
     - [ ] 과정, 레벨, 미션 선택 시 해당 미션의 페어 정보 출력
     - [ ] 매칭 이력 없으면 매칭 이력 없다고 안내 - PairMatchingService#validtae
       - [ ] "[ERROR] 매칭 이력이 없습니다." 출력
