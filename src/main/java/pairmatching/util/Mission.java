@@ -1,6 +1,6 @@
 package pairmatching.util;
 
-public enum Feature {
+public enum Mission {
 
     CAR_RACING("자동차 경주"),
     LOTTO("로또"),
@@ -15,7 +15,7 @@ public enum Feature {
 
     private String viewName;
 
-    Feature(String viewName) {
+    Mission(String viewName) {
         this.viewName = viewName;
     }
 

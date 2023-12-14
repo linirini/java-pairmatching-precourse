@@ -1,14 +1,14 @@
 package pairmatching.util;
 
-import static pairmatching.util.Feature.BASEBALL;
-import static pairmatching.util.Feature.CAR_RACING;
-import static pairmatching.util.Feature.DISTRIBUTION;
-import static pairmatching.util.Feature.LOTTO;
-import static pairmatching.util.Feature.NO_FEATURE;
-import static pairmatching.util.Feature.PAYMENT;
-import static pairmatching.util.Feature.PERFORMANCE;
-import static pairmatching.util.Feature.SHOPPING_BAG;
-import static pairmatching.util.Feature.SUBWAY_PATH;
+import static pairmatching.util.Mission.BASEBALL;
+import static pairmatching.util.Mission.CAR_RACING;
+import static pairmatching.util.Mission.DISTRIBUTION;
+import static pairmatching.util.Mission.LOTTO;
+import static pairmatching.util.Mission.NO_FEATURE;
+import static pairmatching.util.Mission.PAYMENT;
+import static pairmatching.util.Mission.PERFORMANCE;
+import static pairmatching.util.Mission.SHOPPING_BAG;
+import static pairmatching.util.Mission.SUBWAY_PATH;
 
 import java.util.List;
 
@@ -22,9 +22,9 @@ public enum Level {
     ;
 
     private String viewName;
-    private List<Feature> features;
+    private List<Mission> features;
 
-    Level(String viewName, List<Feature> features) {
+    Level(String viewName, List<Mission> features) {
         this.viewName = viewName;
         this.features = features;
     }
@@ -33,7 +33,7 @@ public enum Level {
         return viewName;
     }
 
-    public List<Feature> getFeatures() {
+    public List<Mission> getFeatures() {
         return features;
     }
 }
