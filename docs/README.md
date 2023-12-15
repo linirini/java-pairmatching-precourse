@@ -7,12 +7,14 @@
     - [ ] 함께 미션 수행할 페어 두명씩 매칭 - Pair#List<Crew>
     - [ ] 대상이 홀수인 경우 : 한 페어는 3인
     - [ ] 같은 레벨에서 이미 페어를 맺은 크루와는 다시 페어로 매칭 X - PairRepository#List<Pair>,level
-      - [ ] 페어 매칭 결과들을 레벨 별로 저장해놓는다 - PairRepository#save
+      - [x] 페어 매칭 결과들을 레벨 별로 저장해놓는다 - PairRepository#save
+      - [x] 레벨 별로 페어 목록을 가져온다 - PairRepository#getPairsByLevel
+      - [x] 레벨에 페어 목록이 존재하는지 확인한다 - PairRepository#isPairsExistByLevel
       - [x] 페어 매칭 기록이 있는지 확인한다 - PairService#isDuplicatedPairExists
   - [ ] 구현 방법 - PairMatchingService
-    - [ ] List<String> 크루이름목록
-    - [ ] 크루 목록의 순서를 랜덤으로 섞는다. - ShuffleMachine#shuffle
-      - [ ] `camp.nextstep.edu.missionutils.Randoms`의 shuffle 메서드 사용
+    - [x] List<String> 크루이름목록
+    - [x] 크루 목록의 순서를 랜덤으로 섞는다. - ShuffleMachine#shuffle
+      - [x] `camp.nextstep.edu.missionutils.Randoms`의 shuffle 메서드 사용
     - [ ] 섞은 순서에서 두 명씩 잘라서 페어로 묶는다 - PairMatchingService#matchPair
     - [ ] 홀수인 경우 마지막 남은 크루는 마지막 페어에 포함
     - [ ] 재매칭 시도

@@ -30,7 +30,6 @@ public class PairRepository {
         List<Pair> updatedPair = pairStorage.get(level);
         pairs.forEach(pair -> updatedPair.add(pair));
         pairStorage.replace(level, updatedPair);
-        System.out.println("###"+pairStorage.get(level).size());
     }
 
     public List<Pair> getPairsByLevel(Level level){
