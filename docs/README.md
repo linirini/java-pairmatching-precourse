@@ -15,7 +15,7 @@
     - [x] List<String> 크루이름목록
     - [x] 크루 목록의 순서를 랜덤으로 섞는다. - ShuffleMachine#shuffle
       - [x] `camp.nextstep.edu.missionutils.Randoms`의 shuffle 메서드 사용
-    - [ ] 섞은 순서에서 두 명씩 잘라서 페어로 묶는다 - PairMatchingService#matchPair
+    - [x] 섞은 순서에서 두 명씩 잘라서 페어로 묶는다 - PairMatchingService#matchPair
     - [ ] 홀수인 경우 마지막 남은 크루는 마지막 페어에 포함
     - [ ] 재매칭 시도
       - [ ] 중복 매칭 페어 존재 시 크루 목록의 순서를 다시 랜덤으로 섞어서 매칭 시도 - PairRepository#isExist

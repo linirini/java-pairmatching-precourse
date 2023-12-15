@@ -16,4 +16,8 @@ public class Crew {
         return name;
     }
 
+    public Course getCourse() {
+        return course;
+    }
+
 }
