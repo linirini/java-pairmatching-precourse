@@ -40,6 +40,15 @@ public class PairRepository {
         return pairStorage.get(level).size()!=0;
     }
 
+    public void deleteAll() {
+        pairStorage.clear();
+        pairStorage.put(LEVEL1, new ArrayList<>());
+        pairStorage.put(LEVEL2, new ArrayList<>());
+        pairStorage.put(LEVEL3, new ArrayList<>());
+        pairStorage.put(LEVEL4, new ArrayList<>());
+        pairStorage.put(LEVEL5, new ArrayList<>());
+    }
+
     public List<Pair> findAllByCourse(Course course) {
         return null;
     }

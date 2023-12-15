@@ -16,29 +16,6 @@ public class PairService {
     private final PairRepository pairRepository = new PairRepository();
     private final ShuffleMachine shuffleMachine = ShuffleMachine.getInstance();
 
-    public boolean isDuplicatedPairExists(Level level, List<Pair> pairs) {
-        if (!pairRepository.isPairExistByLevel(level)) {
-            return false;
-        }
-        List<Pair> storedPairs = pairRepository.getPairsByLevel(level);
-        for (Pair pair : pairs) {
-            if (isExistPair(storedPairs, pair)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean isExistPair(List<Pair> storedPairs, Pair pair) {
-        for (Pair storedPair : storedPairs) {
-            if (storedPair.getNames().stream().filter(name -> pair.getNames().contains(name))
-                    .count() >= 2) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public List<Pair> matchPairInCourse(List<String> names, Course course) {
         return getPairs(shuffleMachine.shuffle(names),course);
     }
@@ -67,8 +44,34 @@ public class PairService {
         List<Crew> crews = new ArrayList<>();
         crews.add(crewRepository.getCrewByCourseAndName(course,names.get(index)));
         crews.add(crewRepository.getCrewByCourseAndName(course,names.get(index+1)));
-
         return crews;
+    }
+
+    public boolean isDuplicatedPairExists(Level level, List<Pair> pairs) {
+        if (!pairRepository.isPairExistByLevel(level)) {
+            return false;
+        }
+        List<Pair> storedPairs = pairRepository.getPairsByLevel(level);
+        for (Pair pair : pairs) {
+            if (isExistPair(storedPairs, pair)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean isExistPair(List<Pair> storedPairs, Pair pair) {
+        for (Pair storedPair : storedPairs) {
+            if (storedPair.getNames().stream().filter(name -> pair.getNames().contains(name))
+                    .count() >= 2) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void initiate(){
+        pairRepository.deleteAll();
     }
 
 }

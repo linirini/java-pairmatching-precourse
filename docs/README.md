@@ -16,7 +16,7 @@
     - [x] 크루 목록의 순서를 랜덤으로 섞는다. - ShuffleMachine#shuffle
       - [x] `camp.nextstep.edu.missionutils.Randoms`의 shuffle 메서드 사용
     - [x] 섞은 순서에서 두 명씩 잘라서 페어로 묶는다 - PairMatchingService#matchPair
-    - [ ] 홀수인 경우 마지막 남은 크루는 마지막 페어에 포함
+    - [x] 홀수인 경우 마지막 남은 크루는 마지막 페어에 포함
     - [ ] 재매칭 시도
       - [ ] 중복 매칭 페어 존재 시 크루 목록의 순서를 다시 랜덤으로 섞어서 매칭 시도 - PairRepository#isExist
       - [ ] 3회 시도까지 매칭 안되거나 매칭 가능한 경우의 수가 없으면 예외 처리 - PairMatchingService#
@@ -84,7 +84,7 @@
   - [ ] 순서 : shuffle 메서드의 결과 순서로 정렬
 - [ ] 재매칭 시도 입력 - InputView
   - [x] "매칭 정보가 있습니다. 다시 매칭하시겠습니까?\n네 | 아니오" 출력
-- [ ] 페어 초기화 - PairRepository#deleteAll
+- [x] 페어 초기화 - PairRepository#deleteAll
   - [x] "초기화 되었습니다." 출력
 - [ ] 입출력 - InputView
   - [x] 파일 입출력으로 크루 정보 불러옴
